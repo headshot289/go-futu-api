@@ -2,10 +2,62 @@ package futuapi
 
 import (
 	"context"
+	"crypto/md5"
+	"encoding/hex"
+	"github.com/headshot289/go-futu-api/pb/trdcommon"
+	"log"
 	"testing"
 
-	"github.com/hurisheng/go-futu-api/pb/qotcommon"
+	"github.com/headshot289/go-futu-api/pb/qotcommon"
 )
+
+func TestMd5(t *testing.T) {
+	pwd := ""
+	h := md5.New()
+	if _, err := h.Write([]byte(pwd)); err != nil {
+		t.Error(err)
+	}
+	//s := (string)(h.Sum(nil))
+	s := hex.EncodeToString(h.Sum(nil))
+	t.Logf(s)
+}
+
+func TestPlaceOrder(t *testing.T) {
+	api := NewFutuAPI()
+	defer api.Close(context.Background())
+
+	if err := api.Connect(context.Background(), ":11111"); err != nil {
+		t.Error(err)
+		return
+	}
+
+	if err := api.UnlockTrade(context.Background(), true, "", trdcommon.SecurityFirm_SecurityFirm_FutuSecurities); err != nil {
+		t.Error(err)
+		return
+	} else {
+		t.Log("unlock trade success")
+	}
+
+	if trdAccList, err := api.GetAccList(context.Background()); err != nil {
+		t.Error(err)
+		return
+	} else {
+		for _, acc := range trdAccList {
+			log.Printf("accId=%d accType=%d cardNum=%s firm=%d simAccType=%d trdEnv=%d auth=%+v", acc.AccID, acc.AccType, acc.CardNum, acc.SecurityFirm, acc.SimAccType, acc.TrdEnv, acc.TrdMarketAuthList)
+		}
+	}
+
+	if orderId, err := api.PlaceOrder(context.Background(),
+		&TrdHeader{TrdEnv: trdcommon.TrdEnv_TrdEnv_Real, AccID: 281756456005693483, TrdMarket: trdcommon.TrdMarket_TrdMarket_HK},
+		trdcommon.TrdSide_TrdSide_Buy,
+		trdcommon.OrderType_OrderType_SpecialLimit, "51214", 5000, 0.026,
+		false, 0, trdcommon.TrdSecMarket_TrdSecMarket_HK, "", trdcommon.TimeInForce_TimeInForce_DAY, false); err != nil {
+		t.Error(err)
+		return
+	} else {
+		t.Log("orderId", orderId)
+	}
+}
 
 func TestConnect(t *testing.T) {
 	api := NewFutuAPI()

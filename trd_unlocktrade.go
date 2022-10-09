@@ -5,9 +5,9 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 
-	"github.com/hurisheng/go-futu-api/pb/trdcommon"
-	"github.com/hurisheng/go-futu-api/pb/trdunlocktrade"
-	"github.com/hurisheng/go-futu-api/protocol"
+	"github.com/headshot289/go-futu-api/pb/trdcommon"
+	"github.com/headshot289/go-futu-api/pb/trdunlocktrade"
+	"github.com/headshot289/go-futu-api/protocol"
 )
 
 const (

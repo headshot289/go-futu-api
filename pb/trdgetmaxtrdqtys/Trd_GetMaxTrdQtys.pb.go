@@ -7,8 +7,8 @@
 package trdgetmaxtrdqtys
 
 import (
-	_ "github.com/hurisheng/go-futu-api/pb/common"
-	trdcommon "github.com/hurisheng/go-futu-api/pb/trdcommon"
+	_ "github.com/headshot289/go-futu-api/pb/common"
+	trdcommon "github.com/headshot289/go-futu-api/pb/trdcommon"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

@@ -3,8 +3,8 @@ package futuapi
 import (
 	"context"
 
-	"github.com/hurisheng/go-futu-api/pb/qotmodifyusersecurity"
-	"github.com/hurisheng/go-futu-api/protocol"
+	"github.com/headshot289/go-futu-api/pb/qotmodifyusersecurity"
+	"github.com/headshot289/go-futu-api/protocol"
 )
 
 const (

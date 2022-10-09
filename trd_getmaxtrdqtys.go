@@ -3,9 +3,9 @@ package futuapi
 import (
 	"context"
 
-	"github.com/hurisheng/go-futu-api/pb/trdcommon"
-	"github.com/hurisheng/go-futu-api/pb/trdgetmaxtrdqtys"
-	"github.com/hurisheng/go-futu-api/protocol"
+	"github.com/headshot289/go-futu-api/pb/trdcommon"
+	"github.com/headshot289/go-futu-api/pb/trdgetmaxtrdqtys"
+	"github.com/headshot289/go-futu-api/protocol"
 )
 
 const (

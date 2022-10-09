@@ -11,7 +11,7 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/hurisheng/go-futu-api/tcp"
+	"github.com/headshot289/go-futu-api/tcp"
 	"google.golang.org/protobuf/proto"
 )
 

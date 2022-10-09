@@ -8,14 +8,14 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/hurisheng/go-futu-api/pb/common"
-	"github.com/hurisheng/go-futu-api/pb/getglobalstate"
-	"github.com/hurisheng/go-futu-api/pb/initconnect"
-	"github.com/hurisheng/go-futu-api/pb/keepalive"
-	"github.com/hurisheng/go-futu-api/pb/notify"
-	"github.com/hurisheng/go-futu-api/pb/qotcommon"
-	"github.com/hurisheng/go-futu-api/protocol"
-	"github.com/hurisheng/go-futu-api/tcp"
+	"github.com/headshot289/go-futu-api/pb/common"
+	"github.com/headshot289/go-futu-api/pb/getglobalstate"
+	"github.com/headshot289/go-futu-api/pb/initconnect"
+	"github.com/headshot289/go-futu-api/pb/keepalive"
+	"github.com/headshot289/go-futu-api/pb/notify"
+	"github.com/headshot289/go-futu-api/pb/qotcommon"
+	"github.com/headshot289/go-futu-api/protocol"
+	"github.com/headshot289/go-futu-api/tcp"
 )
 
 var (

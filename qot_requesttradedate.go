@@ -3,9 +3,9 @@ package futuapi
 import (
 	"context"
 
-	"github.com/hurisheng/go-futu-api/pb/qotcommon"
-	"github.com/hurisheng/go-futu-api/pb/qotrequesttradedate"
-	"github.com/hurisheng/go-futu-api/protocol"
+	"github.com/headshot289/go-futu-api/pb/qotcommon"
+	"github.com/headshot289/go-futu-api/pb/qotrequesttradedate"
+	"github.com/headshot289/go-futu-api/protocol"
 )
 
 const (

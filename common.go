@@ -1,7 +1,7 @@
 package futuapi
 
 import (
-	"github.com/hurisheng/go-futu-api/pb/common"
+	"github.com/headshot289/go-futu-api/pb/common"
 )
 
 type ProgramStatus struct {
