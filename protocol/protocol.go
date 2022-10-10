@@ -108,7 +108,7 @@ func (de *FutuDecoder) ReadFrom(c net.Conn) (tcp.Handler, error) {
 			return nil, errors.New("SHA1 sum error")
 		}
 	}
-	log.Printf("read: proto %v serial %v", h.ProtoID, h.SerialNo)
+	//log.Printf("read: proto %v serial %v", h.ProtoID, h.SerialNo)
 	return &handler{
 		reg:    de.reg,
 		proto:  h.ProtoID,
@@ -127,13 +127,13 @@ type handler struct {
 var _ tcp.Handler = (*handler)(nil)
 
 func (h *handler) Handle() {
-	log.Printf("handle: proto %v serial %v", h.proto, h.serial)
+	//log.Printf("handle: proto %v serial %v", h.proto, h.serial)
 	if err := h.reg.handle(h.proto, h.serial, h.body); err != nil {
 		// todo 错误处理
 		log.Println(err)
 		return
 	}
-	log.Printf("finish: proto %v serial %v", h.proto, h.serial)
+	//log.Printf("finish: proto %v serial %v", h.proto, h.serial)
 }
 
 type Response interface {
